@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #6d6e6f;
+}
+
+/* ====== NAVBAR ====== */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(124, 128, 129);
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.container:hover {
+  background-color: rgb(110, 114, 115);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+  transform: none;
+}
+.container h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.container nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.container nav a:hover {
+  color: #e3e3e3;
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(116, 119, 118);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  color: white;
+  box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.3);
+  background-image: url("./img/photo_6026084174693256077_y.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-top: 80px; /* عشان الـ navbar الثابت */
+}
+
+/* ====== PRODUCTS ====== */
+.product {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-around;
+  background-color: #45444469;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.my-pro {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 25px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.product img {
+  height: 80vh;
+  width: 35%;
+  border-radius: 20%;
+  box-shadow: 20px 17px 20px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+}
+
+.product img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.caption {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "PT Sans", sans-serif;
+  padding: 25px;
+  color: white;
+}
+
+/* ====== ABOUT ====== */
+.about {
+  min-height: 100vh;
+  color: white;
+  font-size: 30px;
+  padding-top: 70px;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 5px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.about h1 {
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+.me {
+  font-weight: 900;
+  font-size: 80px;
+  color: #ffffff;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  padding: 65px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ====== CONTACT ====== */
+.contact {
+  width: 100%;
+  background-color: #45444469;
+  color: white;
+  padding: 60px 0;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.contact-container {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  background-color: rgb(124, 128, 129);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+}
+
+.contact-info {
+  flex: 1 1 300px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.contact-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.contact-form button {
+  padding: 15px;
+  background-color: #2f2f2f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.contact-form button:hover {
+  background-color: #5c5c5c;
+  transform: scale(1.03);
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+/* تابلت */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container nav a {
+    font-size: 18px;
+  }
+
+  .product img {
+    width: 45%;
+    height: 60vh;
+  }
+
+  .me {
+    font-size: 60px;
+  }
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .container nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container nav a {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .hero {
+    font-size: 18px;
+    height: 40vh;
+    top: 15vh;
+  }
+
+  .product img {
+    width: 80%;
+    height: auto;
+  }
+
+  .my-pro {
+    font-size: 35px;
+  }
+
+  .about {
+    font-size: 22px;
+    padding: 30px;
+  }
+
+  .me {
+    font-size: 50px;
+    padding: 30px;
+  }
+
+  .contact h1 {
+    font-size: 35px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* موبايلات صغيرة جدًا */
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 20px;
+  }
+
+  .container nav a {
+    font-size: 14px;
+  }
+
+  .hero {
+    font-size: 16px;
+    height: 35vh;
+  }
+
+  .my-pro {
+    font-size: 28px;
+  }
+
+  .me {
+    font-size: 35px;
+  }
+
+  .contact h1 {
+    font-size: 28px;
+  }
+}

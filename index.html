@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting star</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Shooting Star</h1>
+        <nav>
+            <a href="#">home</a>
+            <a href="https://wa.me/201013737586" target="_blank">contact me</a>
+        </nav>
+    </div>
+    <div class="hero">
+        <h1>Crafting Fashion. Creating Confidence.
+        </h1>
+    </div>
+    <h1 class="my-pro">My products</h1>
+    <div class="product">
+        <img src="./img/img2.jpg" alt="loading" srcset="">
+        <img src="./img/img5.jpg" alt="loading" srcset="">
+    </div>
+    <div class="caption">
+
+    </div>
+    <h1 class="me">About Me</h1>
+    <div class="about">
+        <h1>Our story</h1>
+        <span>Founded with a vision to redefine fashion manufacturing, Shooting Star brings together skilled
+            craftsmanship, modern technology, and timeless design to create clothing that speaks for itself.
+        </span>
+        <h1>Our Values</h1>
+        <span>Quality First — الجودة أولاً<br> Creative Design — تصميم مبتكر <br>Long-term Partnerships — شراكات
+            دائمة</span>
+        <h1 >Our Services</h1>
+        <SPan>Custom Manufacturing <br>
+            We bring your designs to life with precision and care. <br><br><br> Private Label Production <br>
+            From concept to final product — your brand, our expertise. <br><br><br>
+
+            Bulk Orders & Export <br>
+            Reliable production and timely delivery worldwide.
+        </SPan>
+        <span>
+            Private Label Production
+            From concept to final product — your brand, our expertise.
+
+        </span>
+        <span>
+            Bulk Orders & Export
+            Reliable production and timely delivery worldwide.
+
+        </span>
+    </div>
+    <section class="contact" id="contact">
+        <h1>Contact Us</h1>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>📞 +201113605116</p>
+                <p>✉️ info@shotingstar0@gmail.com</p>
+                <p>🕐 all day | 9 AM – 6 PM</p>
+            </div>
+
+            <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+        </div>
+    </section>
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // يمنع الفورم من الإرسال العادي
+
+            // رقم واتسابك بدون + ولا مسافات
+            let phoneNumber = "+201113605116"; // ← غيّر الرقم هنا
+
+            // جلب البيانات من الحقول
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            // تكوين الرسالة
+            let text = `Hello Shooting Star 👋%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Message: ${message}`;
+
+            // فتح واتساب
+            let url = `https://wa.me/${phoneNumber}?text=${text}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
