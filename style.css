@@ -294,8 +294,9 @@ body {
   }
 
   .about {
-    font-size: 22px;
-    padding: 30px;
+    font-size: 12px;
+    padding: 12px;
+    letter-spacing: 2px;
   }
 
   .me {
