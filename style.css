@@ -147,9 +147,9 @@ body {
 
 .about h1 {
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   color: white;
-  font-size: 35px;
+  font-size: 20px;
 }
 
 .me {
@@ -220,7 +220,7 @@ body {
   border: none;
   border-radius: 10px;
   outline: none;
-  font-size: 18px;
+  font-size: 12px;
   font-family: "Open Sans", sans-serif;
   background-color: #f5f5f5;
   color: #333;
@@ -271,7 +271,7 @@ body {
 @media (max-width: 768px) {
   .container {
     flex-direction: row;
-    padding: 3px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -300,9 +300,10 @@ body {
   }
 
   .product img {
-    width: 80%;
+    width: 70%;
     height: auto;
     margin-bottom: 30px;
+    margin-top: 20px;
   }
 
   .my-pro {
@@ -310,9 +311,9 @@ body {
   }
 
   .about {
-    font-size: 12px;
+    font-size: 10px;
     padding: 12px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
   }
 
   .me {
@@ -340,7 +341,9 @@ body {
 /* موبايلات صغيرة جدًا */
 @media (max-width: 480px) {
   .container h1 {
-    font-size: 13px;
+    font-size: 14px;
+    align-content: center;
+    padding-top: 8px;
     text-align: center;
   }
 
@@ -351,19 +354,26 @@ body {
     font-size: 16px;
     height: 35vh;
   }
-  .hero h1{
+  .hero h1 {
     font-size: 15px;
   }
 
   .my-pro {
-    font-size: 28px;
+    font-size: 20px;
+    /* font-weight: 800; */
+    letter-spacing: 5px;
   }
 
   .me {
-    font-size: 35px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 700;
   }
 
   .contact h1 {
     font-size: 28px;
   }
+}
+.contact-form button{
+  font-size: 10px;
 }
