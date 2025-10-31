@@ -249,7 +249,7 @@ body {
 /* تابلت */
 @media (max-width: 1024px) {
   .container {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -270,9 +270,12 @@ body {
 /* موبايل */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
+    flex-direction: row;
+    padding: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
     align-items: center;
-    padding: 10px;
   }
 
   .container h1 {
@@ -337,15 +340,19 @@ body {
 /* موبايلات صغيرة جدًا */
 @media (max-width: 480px) {
   .container h1 {
-    font-size: 20px;
+    font-size: 13px;
+    text-align: center;
   }
 
   .container nav a {
-    font-size: 14px;
+    font-size: 11px;
   }
   .hero {
     font-size: 16px;
     height: 35vh;
+  }
+  .hero h1{
+    font-size: 15px;
   }
 
   .my-pro {
