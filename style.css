@@ -299,6 +299,7 @@ body {
   .product img {
     width: 80%;
     height: auto;
+    margin-bottom: 30px;
   }
 
   .my-pro {
@@ -329,6 +330,7 @@ body {
   .contact-form {
     width: 100%;
     text-align: center;
+    font-size: 14px;
   }
 }
 
