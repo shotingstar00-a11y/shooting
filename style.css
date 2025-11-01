@@ -30,7 +30,7 @@ body {
 }
 
 .container:hover {
-  background-color: rgb(58, 56, 61);
+  background-color: black;
   box-shadow: 0px 0px 25px rgb(56, 59, 61);
   transform: none;
 }
@@ -386,3 +386,4 @@ body {
 .contact-form button {
   font-size: 15px;
 }
+
