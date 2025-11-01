@@ -44,15 +44,14 @@ body {
 .container nav {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
 }
 
 .container nav a {
   font-size: 20px;
   text-decoration: none;
   color: white;
-  padding: 10px;
-  font-family: "Open Sans", sans-serif;
+ font-family: "Open Sans", sans-serif;
   font-weight: 700;
   transition: 0.3s;
 }
@@ -66,6 +65,7 @@ body {
 .container img {
   width: 70px;
   height: 30px;
+  position: absolute;
 } /* ====== HERO SECTION ====== */
 .hero {
   width: 100vw;
@@ -310,7 +310,6 @@ body {
 
   .container nav a {
     font-size: 16px;
-    padding: 8px;
   }
 
   .hero {
@@ -371,11 +370,10 @@ body {
     font-size: 9px;
   }
   .container img {
-          width: 40px;
-        height: 11px;
-        position: absolute;
-        top: 13px;
-    }
+    width: 35px;
+    height: 13px;
+    position: absolute;
+    top: 10px;
   }
   .hero {
     font-size: 16px;
@@ -404,4 +402,3 @@ body {
 .contact-form button {
   font-size: 15px;
 }
-
