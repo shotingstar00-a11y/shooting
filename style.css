@@ -17,7 +17,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(124, 128, 129);
+  background-color: #484c50;
   padding: 20px;
   width: 100%;
   position: fixed;
@@ -25,13 +25,13 @@ body {
   left: 0;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  transition: all 0.4s ease;
+  transition: all 0.7s ease;
   z-index: 1000;
 }
 
 .container:hover {
-  background-color: rgb(110, 114, 115);
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+  background-color: rgb(58, 56, 61);
+  box-shadow: 0px 0px 25px rgb(56, 59, 61);
   transform: none;
 }
 .container h1 {
@@ -105,6 +105,7 @@ body {
 
 .my-pro {
   font-size: 50px;
+  letter-spacing: 10px;
   color: white;
   text-align: center;
   font-weight: bold;
@@ -149,12 +150,13 @@ body {
   text-align: center;
   padding: 20px;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .me {
   font-weight: 900;
   font-size: 50px;
+  letter-spacing: 5px;
   color: #ffffff;
   text-align: center;
   font-family: "PT Sans", sans-serif;
@@ -188,7 +190,7 @@ body {
   justify-content: space-around;
   align-items: flex-start;
   gap: 40px;
-  background-color: rgb(124, 128, 129);
+  background-color: #484c50;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
@@ -227,7 +229,7 @@ body {
 }
 
 .contact-form button {
-  padding: 15px;
+  padding: 12px;
   background-color: #2f2f2f;
   color: white;
   border: none;
@@ -263,7 +265,8 @@ body {
   }
 
   .me {
-    font-size: 60px;
+    font-size: 50px;
+    letter-spacing: 10px;
   }
 }
 
@@ -276,6 +279,12 @@ body {
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
+  }
+  .about h1 {
+    font-size: 15px;
+  }
+  .contact-form button {
+    font-size: 7px;
   }
 
   .container h1 {
@@ -374,7 +383,6 @@ body {
     font-size: 28px;
   }
 }
-.contact-form button{
-  font-size: 10px;
+.contact-form button {
+  font-size: 15px;
 }
-
