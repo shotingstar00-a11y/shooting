@@ -17,7 +17,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #484c50;
+  background-color: black;
   padding: 20px;
   width: 100%;
   position: fixed;
@@ -27,6 +27,7 @@ body {
   backdrop-filter: blur(10px);
   transition: all 0.7s ease;
   z-index: 1000;
+  
 }
 
 .container:hover {
@@ -386,4 +387,3 @@ body {
 .contact-form button {
   font-size: 15px;
 }
-
