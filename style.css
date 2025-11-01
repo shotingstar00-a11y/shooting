@@ -57,7 +57,7 @@ body {
 }
 
 .container nav a:hover {
-  color: #e3e3e3;
+  color: aqua;
 }
 .container i {
   color: white;
@@ -402,3 +402,4 @@ body {
 .contact-form button {
   font-size: 15px;
 }
+
