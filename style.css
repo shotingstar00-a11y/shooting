@@ -371,10 +371,11 @@ body {
     font-size: 9px;
   }
   .container img {
-    width: 40px;
-    height: 20px;
-    position: absolute;
-    top: 6px;
+          width: 40px;
+        height: 11px;
+        position: absolute;
+        top: 13px;
+    }
   }
   .hero {
     font-size: 16px;
@@ -403,3 +404,4 @@ body {
 .contact-form button {
   font-size: 15px;
 }
+
