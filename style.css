@@ -288,6 +288,8 @@ body {
   .container img {
     width: 60px;
     height: 25px;
+    position: absolute;
+    top: 11px;
   }
   .about h1 {
     font-size: 15px;
@@ -369,8 +371,10 @@ body {
     font-size: 9px;
   }
   .container img {
-    width: 46px;
-    height: 17px;
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    top: 6px;
   }
   .hero {
     font-size: 16px;
