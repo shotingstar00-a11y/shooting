@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -107,7 +108,7 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   align-content: space-around;
-  background-color: #45444469;
+  background-color: white;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -121,18 +122,9 @@ body {
   font-family: "PT Sans", sans-serif;
 }
 
-.product img {
-  height: 100vh;
-  width: 35%;
-  border-radius: 20%;
-  box-shadow: 20px 17px 20px 3px rgba(0, 0, 0, 0.3);
-  transition: 0.5s;
-}
 
-.product img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
+
+
 
 .caption {
   font-size: 30px;
@@ -252,6 +244,168 @@ body {
 .contact-form button:hover {
   background-color: #5c5c5c;
   transform: scale(1.03);
+}
+/* ====== PRODUCTS ====== */
+.product {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  background-color: #ffffff;
+  padding: 60px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.pro {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pro:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.pro img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pro:hover img {
+  transform: scale(1.05);
+}
+
+.des {
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+}
+
+.des h3 {
+  color: #465b52;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.des span {
+  color: #088178;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.star {
+  color: gold;
+  letter-spacing: 2px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.des button {
+  background-color: #088178;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.des button:hover {
+  background-color: #0aa99e;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .pro img {
+    height: 220px;
+  }
+
+  .des h3 {
+    font-size: 16px;
+  }
+
+  .des span {
+    font-size: 14px;
+  }
+
+  .des button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    padding: 30px 10px;
+    gap: 20px;
+  }
+
+  .pro img {
+    height: 200px;
+  }
+
+  .des h3 {
+    font-size: 14px;
+  }
+
+  .des span {
+    font-size: 13px;
+  }
+
+  .des button {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+}
+/* ====== ANIMATION ====== */
+.pro {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* تأخير بسيط بين كل كرت والتاني */
+.pro:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.pro:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.pro:nth-child(4) {
+  animation-delay: 0.45s;
+}
+.pro:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+/* الحركة نفسها */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ====== MEDIA QUERIES ====== */
@@ -404,4 +558,42 @@ body {
 }
 .contact-form button {
   font-size: 15px;
+}
+@media (max-width: 768px) {
+  .pro {
+    width: 80%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .des button {
+    width: 40%;
+    height: 6vh;
+    font-size: 14px;
+  }
+
+  .des h3 {
+    font-size: 13px;
+  }
+
+  .des span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .pro {
+    width: 90%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .des {
+    font-size: 14px;
+  }
+
+  .des button {
+    width: 50%;
+    height: 6vh;
+    font-size: 12px;
+  }
 }
