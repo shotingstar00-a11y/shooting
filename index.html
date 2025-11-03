@@ -19,51 +19,154 @@
         <a href="https://wa.me/201013737586" target="_blank">contact me</a>
       </nav>
     </div>
+
     <div class="hero">
       <div class="over">
         <h1>Crafting Fashion. Creating Confidence.</h1>
       </div>
     </div>
+
     <h1 class="my-pro">My products</h1>
-    <div class="product">
-      <img src="./img/img2.jpg" alt="loading" srcset="" />
-      <img src="./img/img5.jpg" alt="loading" srcset="" />
+
+    <div class="product" >
+      <!-- ==== Product 1 ==== -->
+      <div class="pro">
+        <div class="pro1">
+          <div class="photo"><img src="./img/img2.jpg" alt="" /></div>
+          <div class="des">
+            <h3>Shooting Star</h3>
+            <h5>Soft</h5>
+            <h5>code 105</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span>300EGP</span>
+            <button>contact me</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== Product 2 ==== -->
+      <div class="pro">
+        <div class="pro1">
+          <div class="photo"><img src="./img/img2.jpg" alt="" /></div>
+          <div class="des">
+            <h3>Shooting Star</h3>
+            <h5>Soft</h5>
+            <h5>code 106</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span>300EGP</span>
+            <button>contact me</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== Product 3 ==== -->
+      <div class="pro">
+        <div class="pro1">
+          <div class="photo"><img src="./img/img7.jpg" alt="" /></div>
+          <div class="des">
+            <h3>Shooting Star</h3>
+            <h5>Soft</h5>
+            <h5>code 107</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span>300EGP</span>
+            <button>contact me</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== Product 4 ==== -->
+      <div class="pro">
+        <div class="pro1">
+          <div class="photo"><img src="./img/img4.jpg" alt="" /></div>
+          <div class="des">
+            <h3>Shooting Star</h3>
+            <h5>Soft</h5>
+            <h5>code 108</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span>300EGP</span>
+            <button>contact me</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== Product 5 ==== -->
+      <div class="pro">
+        <div class="pro1">
+          <div class="photo"><img src="./img/img6.jpg" alt="" /></div>
+          <div class="des">
+            <h3>Shooting Star</h3>
+            <h5>Soft</h5>
+            <h5>code 109</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span>300EGP</span>
+            <button>contact me</button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- ================= ABOUT ================= -->
     <div class="caption"></div>
     <h1 class="me">About Me</h1>
     <div class="about">
       <h1>Our story</h1>
-      <span
-        >Founded with a vision to redefine fashion manufacturing, Shooting Star
+      <span>
+        Founded with a vision to redefine fashion manufacturing, Shooting Star
         brings together skilled craftsmanship, modern technology, and timeless
         design to create clothing that speaks for itself.
       </span>
+
       <h1>Our Values</h1>
-      <span
-        >Quality First — الجودة أولاً<br />
-        Creative Design — تصميم مبتكر <br />Long-term Partnerships — شراكات
-        دائمة</span
-      >
+      <span>
+        Quality First — الجودة أولاً<br />
+        Creative Design — تصميم مبتكر <br />
+        Long-term Partnerships — شراكات دائمة
+      </span>
+
       <h1>Our Services</h1>
-      <span
-        >Custom Manufacturing <br />
+      <span>
+        Custom Manufacturing <br />
         We bring your designs to life with precision and care.
         <br /><br /><br />
         Private Label Production <br />
         From concept to final product — your brand, our expertise.
         <br /><br /><br />
-
         Bulk Orders & Export <br />
         Reliable production and timely delivery worldwide.
       </span>
-      <span>
-        Private Label Production From concept to final product — your brand, our
-        expertise.
-      </span>
-      <span>
-        Bulk Orders & Export Reliable production and timely delivery worldwide.
-      </span>
     </div>
+
+    <!-- ================= CONTACT FORM ================= -->
     <section class="contact" id="contact">
       <h1>Contact Us</h1>
 
@@ -88,29 +191,39 @@
         </form>
       </div>
     </section>
+
+    <!-- ================= SCRIPTS ================= -->
     <script>
+      // زرار Contact Me داخل المنتجات
+      const phone = "201013737586"; // رقمك بدون علامة +
+
+      const buttons = document.querySelectorAll(".pro button");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const parent = btn.closest(".pro1");
+          // يدور على h5 فيه كلمة code
+          const codeEl = Array.from(parent.querySelectorAll("h5")).find((h5) =>
+            h5.textContent.toLowerCase().includes("code")
+          );
+          const codeText = codeEl ? codeEl.textContent.trim() : "غير محدد";
+          const msg = `مرحبًا، أود الاستفسار عن المنتج ${codeText}`;
+          const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+          window.open(url, "_blank");
+        });
+      });
+
+      // إرسال نموذج التواصل للواتساب
       function sendToWhatsApp(event) {
-        event.preventDefault(); // يمنع الفورم من الإرسال العادي
-
-        // رقم واتسابك بدون + ولا مسافات
-        let phoneNumber = "+201113605116"; // ← غيّر الرقم هنا
-
-        // جلب البيانات من الحقول
+        event.preventDefault();
+        let phoneNumber = "201113605116";
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let message = document.getElementById("message").value;
 
-        // تكوين الرسالة
-        let text = `Hello Shooting Star 👋%0A
-Name: ${name}%0A
-Email: ${email}%0A
-Message: ${message}`;
-
-        // فتح واتساب
+        let text = `Hello Shooting Star 👋%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
         let url = `https://wa.me/${phoneNumber}?text=${text}`;
         window.open(url, "_blank");
       }
     </script>
   </body>
 </html>
-
