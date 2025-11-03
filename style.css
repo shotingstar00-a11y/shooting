@@ -89,6 +89,11 @@ body {
   background-position: center;
   margin-top: 80px; /* عشان الـ navbar الثابت */
   background-attachment: fixed;
+  
+}@supports (-webkit-touch-callout: none) {
+  .hero {
+    background-attachment: scroll;
+  }
 }
 .over {
   background-color: rgba(0, 0, 0, 0.4); /* اللون الأسود بنسبة شفافية 50% */
