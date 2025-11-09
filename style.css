@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
 
 * {
   margin: 0;
@@ -89,8 +89,8 @@ body {
   background-position: center;
   margin-top: 80px; /* عشان الـ navbar الثابت */
   background-attachment: fixed;
-  
-}@supports (-webkit-touch-callout: none) {
+}
+@supports (-webkit-touch-callout: none) {
   .hero {
     background-attachment: scroll;
   }
@@ -126,10 +126,6 @@ body {
   padding: 25px;
   font-family: "PT Sans", sans-serif;
 }
-
-
-
-
 
 .caption {
   font-size: 30px;
