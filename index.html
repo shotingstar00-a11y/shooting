@@ -229,37 +229,52 @@
     </section>
 
     <!-- ================= SCRIPTS ================= -->
-    <script>
-      // زرار Contact Me داخل المنتجات
-      const phone = "201013737586"; // رقمك بدون علامة +
+<script>
+  const phone = "201013737586"; // رقمك بدون علامة +
 
-      const buttons = document.querySelectorAll(".pro button");
-      buttons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const parent = btn.closest(".pro1");
-          // يدور على h5 فيه كلمة code
-          const codeEl = Array.from(parent.querySelectorAll("h5")).find((h5) =>
-            h5.textContent.toLowerCase().includes("code")
-          );
-          const codeText = codeEl ? codeEl.textContent.trim() : "غير محدد";
-          const msg = `مرحبًا، أود الاستفسار عن المنتج ${codeText}`;
-          const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-          window.open(url, "_blank");
-        });
-      });
+  const buttons = document.querySelectorAll(".pro button");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const parent = btn.closest(".pro1");
+      const codeEl = Array.from(parent.querySelectorAll("h5")).find((h5) =>
+        h5.textContent.toLowerCase().includes("code")
+      );
+      const codeText = codeEl ? codeEl.textContent.trim() : "غير محدد";
+      const msg = `مرحبًا، أود الاستفسار عن المنتج ${codeText}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    });
+  });
 
-      // إرسال نموذج التواصل للواتساب
-      function sendToWhatsApp(event) {
-        event.preventDefault();
-        let phoneNumber = "201113605116";
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let message = document.getElementById("message").value;
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+    let phoneNumber = "201113605116";
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
 
-        let text = `Hello Shooting Star 👋%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-        let url = `https://wa.me/${phoneNumber}?text=${text}`;
-        window.open(url, "_blank");
-      }
-    </script>
-  </body>
+    let text = `Hello Shooting Star 👋%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    let url = `https://wa.me/${phoneNumber}?text=${text}`;
+    window.open(url, "_blank");
+  }
+
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".heading");
+    const hero = document.querySelector(".hero"); // 👈 سكشن البداية (غيره لو عندك اسم مختلف)
+    
+    // بداية التغيير بعد ما نعدي الهيرو
+    const triggerPoint = hero.offsetHeight - 100; // تقدر تزود أو تقلل 100 حسب ما تحب
+    const scrollY = window.scrollY;
+
+    if (scrollY > triggerPoint) {
+      navbar.classList.add("scroled");
+    } else {
+      navbar.classList.remove("scroled");
+    }
+  });
+</script>
+
+
+
+</body>
 </html>
