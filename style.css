@@ -22,12 +22,17 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  padding: 20px;
   width: 100%;
   position: fixed;
   top: 0;
   transition: all 0.7s ease;
   z-index: 1000;
+  max-width: 1140px; /* نفس عرض bootstrap container */
+  margin: 0 auto;
+  padding: 20px;
+  left: 0;
+  right: 0;
+
 }
 .heading.scroled{
   background-color: black;
