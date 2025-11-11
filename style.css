@@ -10,8 +10,8 @@
 body {
   width: 100%;
   background-color: #484c50;
-background-size: cover;
-background-position: center;
+  background-size: cover;
+  background-position: center;
   text-transform: capitalize;
 }
 
@@ -120,18 +120,21 @@ background-position: center;
 }
 .menu {
   text-align: center;
-  color: white;
+  color: black;
   font-weight: 700;
   font-size: 30px;
   box-shadow: none;
   font-family: sans-serif;
   letter-spacing: 5px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 10px;
 }
 
 .my-pro {
   font-size: 50px;
   letter-spacing: 10px;
-  color:white;
+  color: white;
   text-align: center;
   font-weight: bold;
   padding: 25px;
@@ -517,7 +520,7 @@ background-position: center;
     font-size: 35px;
   }
 
-  .footer{
+  .footer {
     flex-direction: column;
     align-items: center;
     width: 80%;
@@ -536,6 +539,10 @@ background-position: center;
 
 /* موبايلات صغيرة جدًا */
 @media (max-width: 480px) {
+  .heading {
+    position: fixed;
+    left: 0;
+  }
   .heading h1 {
     font-size: 10px;
     align-content: center;
@@ -573,6 +580,10 @@ background-position: center;
   }
   .menu {
     font-size: 15px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
   }
 
   .contact h1 {
