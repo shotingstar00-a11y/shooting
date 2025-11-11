@@ -214,5 +214,23 @@
         window.open(url, "_blank");
       }
     </script>
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".heading");
+    const hero = document.querySelector(".hero-shop"); // 👈 سكشن البداية (غيره لو عندك اسم مختلف)
+    
+    // بداية التغيير بعد ما نعدي الهيرو
+    const triggerPoint = hero.offsetHeight - 100; // تقدر تزود أو تقلل 100 حسب ما تحب
+    const scrollY = window.scrollY;
+
+    if (scrollY > triggerPoint) {
+      navbar.classList.add("scroled");
+    } else {
+      navbar.classList.remove("scroled");
+    }
+  });
+</script>
+
+
 </body>
 </html>
