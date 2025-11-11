@@ -21,15 +21,18 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: transparent;
   padding: 20px;
   width: 100%;
   position: fixed;
   top: 0;
-  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   transition: all 0.7s ease;
   z-index: 1000;
+}
+.heading.scroled{
+  background-color: black;
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+
 }
 
 .heading:hover {
@@ -89,7 +92,6 @@ body {
   background-size: cover;
   image-rendering: -webkit-optimize-contrast;
   background-position: center;
-  margin-top: 80px; /* عشان الـ navbar الثابت */
   background-attachment: fixed;
 }
 @supports (-webkit-touch-callout: none) {
