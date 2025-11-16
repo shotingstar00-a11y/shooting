@@ -26,7 +26,10 @@
 
   <!-- ✅ الروابط -->
   <link rel="canonical" href="https://shotingstar00-a11y.github.io/shooting/" />
-
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <link
   rel="stylesheet"
   
@@ -49,21 +52,38 @@
 </div>
 
     <div class="hero">
-      <div class="over">
-        <h1>Crafting Fashion. Creating Confidence.</h1>
-      </div>
+    <div class="slider">
+  <div class="slides">
+    <img src="./img/SH.png" />
+    <img src="./img/img1.jpg" />
+    <img src="./img/img4.jpg" />
+    <img src="./img/photo_6026084174693256077_y.jpg" />
+  </div>
+
+  <!-- الطبقة السوداء الشفافة -->
+  <div class="overlay">
+    <h1 class="text-animation">Crafting Fashion. Creating Confidence.</h1>
+  </div>
+</div>
+
+</div>
+
+      <!-- <div class="over">
+        
+        <h1 class="animate__animated animate__backInDown">Crafting Fashion. Creating Confidence.</h1>
+      </div> -->
     </div>
 
     <h1 class="my-pro">My products</h1>
 
-    <div class="product container" >
+    <div class="product container">
       <!-- ==== Product 1 ==== -->
       <div class="pro">
         <div class="pro1">
           <div class="photo"><img src="./img/img2.jpg" alt="" /></div>
           <div class="des">
             <h3>Shooting Star</h3>
-            <h5>Soft</h5>
+            <h5>milton</h5>
             <h5>code 105</h5>
             <div class="star">
               <i class="fa-solid fa-star"></i>
@@ -162,7 +182,40 @@
         </div>
       </div>
     </div>
+    <!-- ===== Product Popup Modal ===== -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
 
+    <div class="modal-left">
+      <img id="modalImg" src="" alt="">
+    </div>
+
+    <div class="modal-right">
+      <h2 id="modalTitle">Product Name</h2>
+      <p id="modalCode">Code: ---</p>
+      <p id="modalPrice">Price: ---</p>
+
+      <h4>Sizes:</h4>
+      <div class="sizes">
+        <span>M</span>
+        <span>L</span>
+        <span>XL</span>
+        <span>2XL</span>
+      </div>
+
+      <h4>Colors:</h4>
+      <div class="colors">
+        <span class="color" data-img="./img/img2.jpg" style="background:red;"></span>
+        <span class="color" data-img="./img/img7.jpg" style="background:blue;"></span>
+        <span class="color" data-img="./img/img6.jpg" style="background:black;"></span>
+      </div>
+
+      <button id="contactbtn">Contact Me</button>
+    </div>
+
+  </div>
+</div>
     <!-- ================= ABOUT ================= -->
     <div class="caption"></div>
     <h1 class="me container">About Me</h1>
@@ -274,7 +327,56 @@
     }
   });
 </script>
+<script>
+document.getElementById("contactbtn").addEventListener("click", () => {
+  const phonePopup = "201013737586"; // رقمك
+  
+  const codePopup = modalCode.textContent; // بياخد الكود من الـ popup
+  
+  const msg = `مرحبًا، أود الاستفسار عن المنتج ${codePopup}`;
+  const url = `https://wa.me/${phonePopup}?text=${encodeURIComponent(msg)}`;
+  
+  window.open(url, "_blank");
+});
+</script>
+<script>
+  const modal = document.getElementById("productModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalCode = document.getElementById("modalCode");
+  const modalPrice = document.getElementById("modalPrice");
 
+  // فتح الـ popup عند الضغط على أي منتج
+  document.querySelectorAll(".pro1").forEach(item => {
+    item.addEventListener("click", () => {
+      const img = item.querySelector("img").src;
+      const title = item.querySelector("h3").textContent;
+      const soft = item.querySelectorAll("h5")[0].textContent;
+      const code = item.querySelectorAll("h5")[1].textContent;
+      const price = item.querySelector("span").textContent;
+
+      modalImg.src = img;
+      modalTitle.textContent = title + " - " + soft;
+      modalCode.textContent = code;
+      modalPrice.textContent = price;
+
+      modal.style.display = "flex";
+    });
+  });
+
+  // إغلاق
+  document.querySelector(".close").onclick = () => modal.style.display = "none";
+  window.onclick = e => { if(e.target === modal) modal.style.display="none"; }
+
+  // تغيير اللون = تغيير الصورة
+ 
+    
+</script>
+<script>
+  window.addEventListener("load", function () {
+    document.querySelector(".slides").style.opacity = "1";
+  });
+</script>
 
 
 </body>

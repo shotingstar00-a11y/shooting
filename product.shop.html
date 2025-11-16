@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>قائمة منتجات — معاينة تفاصيل داخل الصفحة</title>
+  <style>
+    :root{
+      --accent: #1e90ff;
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #111;
+    }
+    *{box-sizing:border-box}
+    body{font-family: "Segoe UI", Tahoma, Arial, sans-serif; background:var(--bg); color:var(--text); margin:0; padding:24px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      max-width:1100px;
+      margin-inline:auto;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:12px;
+      box-shadow:0 6px 18px rgba(10,10,20,0.06);
+      display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;
+      cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-6px); box-shadow:0 14px 30px rgba(10,10,20,0.09)}
+    .card img{width:100%;height:170px;object-fit:cover;border-radius:8px}
+    .card h3{margin:0;font-size:16px}
+    .card .price{color:var(--accent);font-weight:700}
+
+    /* overlay + modal */
+    .overlay{
+      position:fixed; inset:0; display:none; place-items:center; z-index:60;
+      /* semi-transparent color for dim + allow blur */
+      background:rgba(0,0,0,0.35);
+      /* backdrop-filter works on supported browsers to blur *what's behind* */
+      backdrop-filter:blur(6px) saturate(110%);
+      -webkit-backdrop-filter:blur(6px) saturate(110%);
+      padding:20px;
+    }
+    .overlay.show{display:grid}
+
+    .modal{
+      width:100%; max-width:920px; background:var(--card); border-radius:14px; overflow:hidden;
+      display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start;
+      box-shadow:0 30px 80px rgba(8,10,20,0.35);
+      transform:translateY(8px); opacity:0; transition:opacity .18s ease, transform .18s ease;
+    }
+    .overlay.show .modal{transform:none; opacity:1}
+
+    .modal-left{padding:18px}
+    .modal-left img{width:100%;height:420px;object-fit:cover;border-radius:8px}
+
+    .modal-right{padding:18px;border-left:1px solid rgba(0,0,0,0.06)}
+    .modal-right h2{margin:0 0 8px 0}
+    .modal-right p{margin:0 0 12px 0;color:#444}
+
+    .sizes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .size{border:1px solid rgba(0,0,0,0.08); padding:8px 12px;border-radius:8px;cursor:pointer}
+    .size.active{border-color:var(--accent); box-shadow:0 6px 20px rgba(30,144,255,0.08)}
+
+    .quantity{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+    .qty-btn{padding:6px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);cursor:pointer}
+
+    .actions{display:flex;gap:8px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn.primary{background:var(--accent);color:white}
+    .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.08)}
+
+    /* responsive */
+    @media (max-width:920px){
+      .modal{grid-template-columns:1fr;}
+      .modal-left img{height:320px}
+    }
+
+    /* Accessibility helpers */
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;margin-bottom:18px">منتجات تجريبية — اضغط لعرض التفاصيل</h1>
+
+  <div class="grid" id="productGrid">
+    <!-- سنتولّد بعض البطاقات افتراضياً -->
+    <div class="card" data-id="1" data-title="تيشيرت كاجوال" data-price="250" data-img="https://images.unsplash.com/photo-1520975913888-6d0d4e8a2fd9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" data-sizes="S,M,L,XL">
+      <img src="https://images.unsplash.com/photo-1520975913888-6d0d4e8a2fd9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="تيشيرت كاجوال">
+      <h3>تيشيرت كاجوال</h3>
+      <div class="price">250 جنيه</div>
+    </div>
+
+    <div class="card" data-id="2" data-title="فستان صيفي" data-price="420" data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" data-sizes="S,M,L">
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="فستان صيفي">
+      <h3>فستان صيفي</h3>
+      <div class="price">420 جنيه</div>
+    </div>
+
+    <div class="card" data-id="3" data-title="جاكيت شتوي" data-price="980" data-img="https://images.unsplash.com/photo-1520975913888-6d0d4e8a2fd9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" data-sizes="M,L,XL,XXL">
+      <img src="https://images.unsplash.com/photo-1520975913888-6d0d4e8a2fd9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="جاكيت">
+      <h3>جاكيت شتوي</h3>
+      <div class="price">980 جنيه</div>
+    </div>
+
+  </div>
+
+  <!-- Overlay + Modal -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" aria-labelledby="modalTitle">
+      <div class="modal-left">
+        <button id="closeBtn" aria-label="اغلاق" style="float:left;border:0;background:transparent;font-size:18px;cursor:pointer">✕</button>
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="modal-right">
+        <h2 id="modalTitle">عنوان المنتج</h2>
+        <p id="modalPrice">السعر</p>
+        <p id="modalDesc">وصف سريع عن المنتج يمكن وضعه هنا. هذا النص توضيحي.</p>
+
+        <div>
+          <strong>المقاسات:</strong>
+          <div class="sizes" id="sizesContainer" role="list"></div>
+        </div>
+
+        <div style="margin-top:12px">
+          <strong>الكمية:</strong>
+          <div class="quantity">
+            <button class="qty-btn" id="decBtn" aria-label="نقص">-</button>
+            <div id="qtyVal">1</div>
+            <button class="qty-btn" id="incBtn" aria-label="زيادة">+</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="addCartBtn">أضف للسلة</button>
+          <button class="btn ghost" id="favBtn">إضافة للمفضلة</button>
+        </div>
+
+        <p style="margin-top:12px;color:#666;font-size:13px">اضغط خارج المودال أو على زر الإغلاق لإغلاق التفاصيل. يمكنك أيضًا الضغط على زر Esc.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // عناصر DOM
+    const overlay = document.getElementById('overlay');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrice = document.getElementById('modalPrice');
+    const sizesContainer = document.getElementById('sizesContainer');
+    const qtyVal = document.getElementById('qtyVal');
+    const incBtn = document.getElementById('incBtn');
+    const decBtn = document.getElementById('decBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    let lastFocused = null;
+
+    // فتح المودال ببيانات المنتج
+    function openModalFromCard(card){
+      const title = card.dataset.title;
+      const price = card.dataset.price;
+      const img = card.dataset.img;
+      const sizes = card.dataset.sizes ? card.dataset.sizes.split(',') : [];
+
+      modalTitle.textContent = title;
+      modalPrice.textContent = price + ' جنيه';
+      modalImg.src = img;
+      modalImg.alt = title;
+      sizesContainer.innerHTML = '';
+
+      sizes.forEach((s, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'size';
+        btn.textContent = s.trim();
+        btn.setAttribute('role','listitem');
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.size').forEach(x=>x.classList.remove('active'));
+          btn.classList.add('active');
+        });
+        // افتراضياً اختار أول مقاس
+        if(i===0) btn.classList.add('active');
+        sizesContainer.appendChild(btn);
+      });
+
+      qtyVal.textContent = '1';
+
+      // حفظ آخر تركيز لارجاعه بعد الإغلاق
+      lastFocused = document.activeElement;
+
+      // إظهار overlay (يعمل blur على الخلفية عبر backdrop-filter)
+      overlay.classList.add('show');
+      overlay.setAttribute('aria-hidden','false');
+
+      // التركيز على زر الإضافة للسلة لسهولة الوصول
+      document.getElementById('addCartBtn').focus();
+    }
+
+    // إغلاق المودال
+    function closeModal(){
+      overlay.classList.remove('show');
+      overlay.setAttribute('aria-hidden','true');
+      // إعادة التركيز
+      if(lastFocused) lastFocused.focus();
+    }
+
+    // تعيين أحداث على البطاقات
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => openModalFromCard(card));
+      card.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') openModalFromCard(card);
+      });
+      card.tabIndex = 0; // ليصبح قابل للتركيز وفتح عبر الكيبورد
+    });
+
+    // إغلاق عند الضغط على الخلفية
+    overlay.addEventListener('click', (e)=>{
+      if(e.target === overlay) closeModal();
+    });
+    closeBtn.addEventListener('click', closeModal);
+
+    // أزرار الكمية
+    incBtn.addEventListener('click', ()=>{ qtyVal.textContent = String(Number(qtyVal.textContent)+1) });
+    decBtn.addEventListener('click', ()=>{ if(Number(qtyVal.textContent)>1) qtyVal.textContent = String(Number(qtyVal.textContent)-1) });
+
+    // إغلاق بالـ ESC
+    document.addEventListener('keyup', (e)=>{
+      if(e.key === 'Escape' && overlay.classList.contains('show')) closeModal();
+    });
+
+    // منع التنقل بالـ tab خارج المودال البسيط (trap focus بسيط)
+    document.addEventListener('focus', function(event){
+      if(!overlay.classList.contains('show')) return;
+      const modal = overlay.querySelector('.modal');
+      if(modal && !modal.contains(event.target)){
+        event.stopPropagation();
+        modal.querySelector('button, [tabindex]')?.focus();
+      }
+    }, true);
+
+    // مثال: إضافة للسلة (مكان تنفيذ العملية الحقيقية)
+    document.getElementById('addCartBtn').addEventListener('click', ()=>{
+      const chosenSize = document.querySelector('.size.active')?.textContent || '';
+      const qty = qtyVal.textContent;
+      // هنا ترسل للـ backend أو تخزن محليًا
+      alert(`${modalTitle.textContent} - المقاس: ${chosenSize} - الكمية: ${qty} \nتمت إضافته مؤقتًا (هذا مجرد مثال)`);
+    });
+
+    // زر المفضلة
+    document.getElementById('favBtn').addEventListener('click', ()=>{
+      alert('أضيف إلى المفضلة (مثال)');
+    })
+  </script>
+</body>
+</html>
