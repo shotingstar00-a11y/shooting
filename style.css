@@ -803,6 +803,7 @@ body {
     top: 10px;
     right: 15px;
     font-size: 30px;
+    
   }
 }
 
@@ -817,5 +818,9 @@ body {
 
   #contactbtn {
     font-size: 18px;
+  }
+  .close{
+    color: white;
+    font-weight: 700;
   }
 }
