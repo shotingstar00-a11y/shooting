@@ -455,15 +455,16 @@
     }
   });
 </script>
-
 <script>
   const modal = document.getElementById("productModal");
   const modalImg = document.getElementById("modalImg");
   const modalTitle = document.getElementById("modalTitle");
   const modalCode = document.getElementById("modalCode");
   const modalPrice = document.getElementById("modalPrice");
+  const closeBtn = document.querySelector(".close");
+  const navbar = document.querySelector(".heading"); // ✔ أصبح عنصر واحد
 
-  // فتح الـ popup عند الضغط على أي منتج
+  // فتح المودال عند الضغط على المنتج
   document.querySelectorAll(".pro1").forEach(item => {
     item.addEventListener("click", () => {
       const img = item.querySelector("img").src;
@@ -473,35 +474,37 @@
       const price = item.querySelector("span").textContent;
 
       modalImg.src = img;
-      modalTitle.textContent = title + " - " + soft;
+      modalTitle.textContent = `${title} - ${soft}`;
       modalCode.textContent = code;
       modalPrice.textContent = price;
 
       modal.style.display = "flex";
+      navbar.style.display = "none"; // ✔ إخفاء النافبار
     });
   });
 
-  // إغلاق
-  document.querySelector(".close").onclick = () => modal.style.display = "none";
-  window.onclick = e => { if(e.target === modal) modal.style.display="none"; }
+  // زر الإغلاق
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    navbar.style.display = "flex"; // ✔ إرجاع النافبار
+  };
 
-  // تغيير اللون = تغيير الصورة
- 
-    
-</script>
-<script>
-  
-  // زرار Contact Me داخل الـ Popup
-document.getElementById("contactbtn").addEventListener("click", () => {
-  const phonePopup = "201013737586"; // رقمك
-  
-  const codePopup = modalCode.textContent; // بياخد الكود من الـ popup
-  
-  const msg = `مرحبًا، أود الاستفسار عن المنتج ${codePopup}`;
-  const url = `https://wa.me/${phonePopup}?text=${encodeURIComponent(msg)}`;
-  
-  window.open(url, "_blank");
-});
+  // إغلاق عند الضغط خارج المودال
+  window.onclick = e => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      navbar.style.display = "flex";
+    }
+  };
+
+  // زر Contact Me داخل الـ Popup
+  document.getElementById("contactbtn").addEventListener("click", () => {
+    const phonePopup = "201013737586";
+    const codePopup = modalCode.textContent;
+    const msg = `مرحبًا، أود الاستفسار عن المنتج ${codePopup}`;
+    const url = `https://wa.me/${phonePopup}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+  });
 </script>
 
 </body>
