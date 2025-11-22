@@ -236,7 +236,7 @@ body {
 .about {
   min-height: 100vh;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   padding-top: 70px;
   padding-bottom: 70px;
   font-family: "PT Sans", sans-serif;
@@ -823,4 +823,1258 @@ body {
     color: white;
     font-weight: 700;
   }
+}
+.heading .active{
+    color: aqua;
+}
+footer {
+  background: #111;
+  color: #eee;
+  padding: 40px 0 20px;
+  font-family: "Tajawal", sans-serif;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer h3, .footer h4 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer p, .footer a {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.footer a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social a {
+  margin-right: 10px;
+  background: #222;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.social a:hover {
+  background: #444;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+.heading.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+/* Hero Section */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #484c50;
+  background-position: center;
+  text-transform: capitalize;
+}
+
+/* ====== NAVBAR ====== */
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.9s ease;
+  z-index: 1000;
+  max-width: 1140px; /* نفس عرض bootstrap container */
+  margin: 0 auto;
+  padding: 20px;
+
+}
+.heading.scroled {
+  background-color: black;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+}
+
+.heading:hover {
+  background-color: black;
+  box-shadow: 0px 0px 25px rgb(56, 59, 61);
+  transform: none;
+}
+.heading h1 {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.heading nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.heading nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  transition: 0.3s;
+
+}
+
+.heading nav a:hover {
+  color: #e3e3e3;
+  color: aqua;
+}
+.heading i {
+  color: white;
+}
+.heading img {
+  width: 70px;
+  height: auto;
+  position: relative;
+} /* ====== HERO SECTION ====== */
+.hero {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+/* السلايدر */
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* الطبقة السوداء الشفافة */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);  /* شفافية قوية */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* كلام جوّا الطبقة */
+.overlay h1 {
+  color: white;
+  font-size: 3rem;
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  opacity: 0;
+  animation: textFade 4s ease forwards 1s; /* يبدأ بعد ثواني */
+}
+
+/* ✨ أنيميشن الكلام */
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.slides {
+  display: flex;
+  width: 400%;
+  transform: translateX(0);          /* مهم جداً */
+  animation: slide 16s infinite ease-in-out;
+  animation-fill-mode: both;        /* يمنعها تبدأ من النص */
+  animation-delay: 0.1s;            /* يضمن البداية الصح بعد تحميل الصفحة */
+}
+
+.slides img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.slides {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+
+/* الأنيميشن */
+@keyframes slide {
+
+  0%    { transform: translateX(0); }
+  20%   { transform: translateX(0); }
+
+  25%   { transform: translateX(-100vw); }
+  45%   { transform: translateX(-100vw); }
+
+  50%   { transform: translateX(-200vw); }
+  70%   { transform: translateX(-200vw); }
+
+  75%   { transform: translateX(-300vw); }
+  95%   { transform: translateX(-300vw); }
+
+  100%  { transform: translateX(0); }
+}
+
+
+/* للهواتف (مشاكل السفاري) */
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+.over {
+  background-color: rgba(0, 0, 0, 0.4); /* اللون الأسود بنسبة شفافية 50% */
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====== PRODUCTS ====== */
+.product {
+  min-height: 120vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-around;
+  background-color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.menu {
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  font-size: 30px;
+  box-shadow: none;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.my-pro {
+  font-size: 50px;
+  letter-spacing: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 25px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.caption {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "PT Sans", sans-serif;
+  padding: 25px;
+  color: white;
+}
+
+/* ====== ABOUT ====== */
+.about {
+  min-height: 100vh;
+  color: white;
+  font-size: 20px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 5px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+}
+
+.about h1 {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.me {
+  font-weight: 900;
+  font-size: 50px;
+  letter-spacing: 5px;
+  color: white;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ====== CONTACT ====== */
+.contact {
+  /* background-color: #45444469; */
+  color: white;
+  padding: 60px 0;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.contact h1 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.footer {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  background-color: #484c50;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-info {
+  flex: 1 1 300px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.contact-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #2f2f2f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.contact-form button:hover {
+  background-color: #5c5c5c;
+  transform: scale(1.03);
+}
+/* ====== PRODUCTS ====== */
+.product {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  background-color: #ffffff;
+  padding: 60px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.pro {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pro:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.pro img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pro:hover img {
+  transform: scale(1.05);
+}
+
+.des {
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+}
+
+.des h3 {
+  color: #465b52;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.des span {
+  color: #088178;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.star {
+  color: gold;
+  letter-spacing: 2px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.des button {
+  background-color: #088178;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.des button:hover {
+  background-color: #0aa99e;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .pro img {
+    height: 220px;
+  }
+
+  .des h3 {
+    font-size: 16px;
+  }
+
+  .des span {
+    font-size: 14px;
+  }
+
+  .des button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    padding: 30px 10px;
+    gap: 20px;
+  }
+
+  .pro img {
+    height: 200px;
+  }
+
+  .des h3 {
+    font-size: 14px;
+  }
+
+  .des span {
+    font-size: 13px;
+  }
+
+  .des button {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+}
+/* ====== ANIMATION ====== */
+.pro {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* تأخير بسيط بين كل كرت والتاني */
+.pro:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.pro:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.pro:nth-child(4) {
+  animation-delay: 0.45s;
+}
+.pro:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+/* الحركة نفسها */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+/* تابلت */
+@media (max-width: 1024px) {
+  .heading {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .heading nav a {
+    font-size: 18px;
+  }
+
+  .product img {
+    width: 45%;
+    height: 60vh;
+  }
+
+  .me {
+    font-size: 50px;
+    letter-spacing: 10px;
+  }
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .heading {
+    flex-direction: row;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+  }
+  .heading img {
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    top: 11px;
+  }
+  .about h1 {
+    font-size: 15px;
+  }
+  .contact-form button {
+    font-size: 7px;
+  }
+
+  .heading h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .heading nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .heading nav a {
+    font-size: 16px;
+  }
+
+  .hero {
+    font-size: 18px;
+    height: 40vh;
+    top: 15vh;
+  }
+
+  .product img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .my-pro {
+    font-size: 35px;
+  }
+
+  .about {
+    font-size: 10px;
+    padding: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .me {
+    font-size: 50px;
+    padding: 30px;
+  }
+
+  .contact h1 {
+    font-size: 35px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  .menu {
+    font-size: 20px;
+  }
+}
+
+/* موبايلات صغيرة جدًا */
+@media (max-width: 480px) {
+  .heading {
+    position: fixed;
+    left: 0;
+  }
+  .heading h1 {
+    font-size: 10px;
+    align-content: center;
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  .heading nav a {
+    font-size: 9px;
+  }
+  .heading img {
+    width: 35px;
+    height: 13px;
+    position: absolute;
+    top: 10px;
+  }
+  .hero {
+    font-size: 16px;
+    height: 35vh;
+  }
+  .hero h1 {
+    font-size: 15px;
+  }
+
+  .my-pro {
+    font-size: 20px;
+    /* font-weight: 800; */
+    letter-spacing: 5px;
+  }
+
+  .me {
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 700;
+  }
+  .menu {
+    font-size: 15px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+  }
+
+  .contact h1 {
+    font-size: 28px;
+  }
+}
+.contact-form button {
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  .pro {
+    width: 80%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .des button {
+    width: 40%;
+    height: 6vh;
+    font-size: 14px;
+  }
+
+  .des h3 {
+    font-size: 13px;
+  }
+
+  .des span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .pro {
+    width: 90%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .des {
+    font-size: 14px;
+  }
+
+  .des button {
+    width: 50%;
+    height: 6vh;
+    font-size: 12px;
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+
+  display: flex;
+  gap: 30px;
+  border-radius: 10px;
+  flex-direction: row;
+}
+
+.modal img {
+  width: 280px;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.colors .color {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #333;
+  margin-right: 10px;
+}
+#contactbtn{
+  color: white;
+  padding: 12px;
+  background-color: green;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;     /* من صف لعمود */
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;          /* لو المحتوى طويل */
+    gap: 15px;
+  }
+
+  .modal img {
+    width: 100%;               /* الصورة كاملة */
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .modal-right {
+    width: 100%;
+    text-align: center;        /* تنسيق أفضل */
+  }
+
+  .sizes span, 
+  .colors .color {
+    margin: 5px;
+  }
+
+  #contactbtn {
+    width: 100%;
+    padding: 14px;
+    font-size: 20px;
+  }
+
+  .close {
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 15px;
+  }
+
+  .modal img {
+    max-width: 300px;
+  }
+
+  #contactbtn {
+    font-size: 18px;
+  }
+  .close{
+    color: white;
+    font-weight: 700;
+  }
+}
+.heading .active{
+    color: aqua;
+}
+footer {
+  background: #111;
+  color: #eee;
+  padding: 40px 0 20px;
+  font-family: "Tajawal", sans-serif;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer h3, .footer h4 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer p, .footer a {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.footer a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social a {
+  margin-right: 10px;
+  background: #222;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.social a:hover {
+  background: #444;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+/* Footer Responsive */
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    direction: rtl;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer p, .footer a {
+    font-size: 10px;
+  }
+  .copy {
+  font-size: 10px;
+  }
+
+
+  .social a {
+    margin: 5px;
+    display: inline-block;
+  }
+}
+
+.heading.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+/* Hero Section */
+.our-story-hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.our-story-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+.our-story-hero .content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+.our-story-hero h1 {
+  font-size: 55px;
+  font-weight: 700;
+}
+.our-story-hero p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: white;
+}
+
+/* Intro Section */
+.our-story-intro,
+.our-mission,
+.our-vision {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 10%;
+}
+
+.our-story-intro .text,
+.our-mission .text,
+.our-vision .text {
+  width: 40%;
+  color: white;
+}
+
+.our-story-intro img,
+.our-mission img,
+.our-vision img {
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0002;
+}
+
+/* Process Section */
+.process {
+  padding: 80px 10%;
+  text-align: center;
+}
+.process h2 {
+  font-size: 35px;
+  margin-bottom: 40px;
+  color: white;
+}
+.process .steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.process .step {
+  width: 32%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #0001;
+}
+.process .step img {
+  width: 100%;
+  border-radius: 10px;
+}
+.process .step h3 {
+  margin: 15px 0 8px;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .our-story-intro,
+  .our-mission,
+  .our-vision {
+    text-align: center;
+    gap: 30px;
+    padding: 50px 5%;
+  }
+.our-story-hero h1{
+  font-size: 15px;
+}
+.process h2 {
+  font-size: 15px;
+
+}
+.process .step h3 {
+  font-size: 12px;
+}
+.step p {
+font-size: 7px;
+}
+.our-story-hero p{
+  font-size: 8px;
+}
+  .our-story-intro .text,
+  .our-mission .text,
+  .our-vision .text {
+    width: 60%;
+    font-size: 8px;
+  }
+
+  .our-story-intro img,
+  .our-mission img,
+  .our-vision img,
+  .image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .process .steps {
+  
+    gap: 20px;
+  }
+
+  .process .step {
+    width: 33%;
+  }
+}
+
+.image{
+  width: 40%;
+}
+.step p{
+  color: gray;
+}
+#contactForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    margin-top: 2rem;
+    gap: 10px;
+}
+.contact-me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 50%;
+    align-content: center;
+    width: 100%;
+    /* gap: 9px; */
+}
+.contact-me h1{
+  color: white;
+  font-size: 15px;
+}
+.contact-me h2{
+  color: white;
+  font-size: 15px;
+}
+#contactForm input{
+    height: 50px;
+    border-radius: 12px;
+    padding: 12px;
+    padding-right: 12px;
+    font-size: 12px;
+    }
+    #contactForm label{
+      color: white;
+      font-size: 12px;
+      padding: 5px;
+    }
+    #contactForm button{
+      height: 50px;
+      background-color:  #333;
+      color: white;
+      /* margin-top: 20px; */
+      border-radius: 12px;
+    }
+    .success-msg{
+      color: white;
+      font-size: 10px;
+      padding: 10px;
+    }
+.father{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.se2{
+    background-color: #333333;
+    width: 100%;
+    height: 100vh;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.se2 img{
+  width: 60%;
+  object-fit: cover;
+  border-radius: 12px;
+
+}
+.contact-me textarea{
+  font-size: 10px;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+    
+
+    #contactForm {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .se2 img {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* الموبايل الصغير جداً */
+@media (max-width: 480px) {
+    .father {
+        gap: 5px;
+    }
+.contact-me h1{
+  font-size: 8px;
+}
+.contact-me h2{
+  font-size: 8px;
+}
+    .se2 img {
+        width: 90%;
+        max-width: 180px;
+    }
+
+    #contactForm input,
+    #contactForm button {
+        height: 35px;
+        font-size: 8px;
+    }
+
+    #contactForm textarea {
+        font-size: 8px;
+    }
 }

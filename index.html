@@ -44,9 +44,10 @@
   <div class="heading container">
     <h1>Shooting Star<img src="./img/LOGO.png" /></h1>
     <nav>
-      <a href="index.html">home</a>
+      <a class="active" href="index.html">home</a>
       <a href="shop.html">shoping</a>
-      <a href="https://wa.me/201013737586" target="_blank">contact me</a>
+      <a href="about.html">about</a>
+      <a href="contact.html">contact</a>
     </nav>
   </div>
 </div>
@@ -59,7 +60,7 @@
     <img src="./img/img4.jpg" />
     <img src="./img/photo_6026084174693256077_y.jpg" />
   </div>
-
+  
   <!-- الطبقة السوداء الشفافة -->
   <div class="overlay">
     <h1 class="text-animation">Crafting Fashion. Creating Confidence.</h1>
@@ -68,11 +69,12 @@
 
 </div>
 
-      <!-- <div class="over">
-        
-        <h1 class="animate__animated animate__backInDown">Crafting Fashion. Creating Confidence.</h1>
-      </div> -->
-    </div>
+<!-- <div class="over">
+  
+  <h1 class="animate__animated animate__backInDown">Crafting Fashion. Creating Confidence.</h1>
+</div> -->
+</div>
+
 
     <h1 class="my-pro">My products</h1>
 
@@ -281,115 +283,51 @@
         </form>
       </div>
     </section>
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-about">
+      <h3>shooting star</h3>
+<p>نعمل على توسيع خطوط الإنتاج وزيادة قدراتنا للوصول لأسواق جديدة، وتطوير منتجات تلائم احتياجات العملاء المتغيرة باستمرار.</p>    </div>
+
+    <div class="footer-links">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="home">الرئيسية</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="#">الخدمات</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>تواصل معنا</h4>
+      <ul>
+        <li>      <p>📍 العنوان: القاهره - عزبه النخل</p>
+</li>
+        <li>      <p>📞 الهاتف: 01113605116</p>
+</li>
+        <li>      <p>✉️ البريد: shotingstar00@gmail.com</p>
+</li>
+      </ul>
+
+
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=100083360465874" target="_blank">🔗 Facebook</a>
+        <a href="https://www.instagram.com/shotingstar743/"target="_blank">🔗 instagram</a>
+        <a href="https://www.tiktok.com/@shootingstar6708?is_from_webapp=1&sender_device=pc" target="_blank">🔗 tic tok</a>
+        <a href="https://wa.me/201013737586" target="_blank">🔗 whatsapp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    © 2026 جميع الحقوق محفوظة – اسم الموقع
+  </div>
+</footer>
 
     <!-- ================= SCRIPTS ================= -->
-<script>
-  const phone = "201013737586"; // رقمك بدون علامة +
-
-  const buttons = document.querySelectorAll(".pro button");
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const parent = btn.closest(".pro1");
-      const codeEl = Array.from(parent.querySelectorAll("h5")).find((h5) =>
-        h5.textContent.toLowerCase().includes("code")
-      );
-      const codeText = codeEl ? codeEl.textContent.trim() : "غير محدد";
-      const msg = `مرحبًا، أود الاستفسار عن المنتج ${codeText}`;
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-      window.open(url, "_blank");
-    });
-  });
-
-  function sendToWhatsApp(event) {
-    event.preventDefault();
-    let phoneNumber = "201113605116";
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    let text = `Hello Shooting Star 👋%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-    let url = `https://wa.me/${phoneNumber}?text=${text}`;
-    window.open(url, "_blank");
-  }
-
-  window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".heading");
-    const hero = document.querySelector(".hero"); // 👈 سكشن البداية (غيره لو عندك اسم مختلف)
-    
-    // بداية التغيير بعد ما نعدي الهيرو
-    const triggerPoint = hero.offsetHeight - 100; // تقدر تزود أو تقلل 100 حسب ما تحب
-    const scrollY = window.scrollY;
-
-    if (scrollY > triggerPoint) {
-      navbar.classList.add("scroled");
-    } else {
-      navbar.classList.remove("scroled");
-    }
-  });
-</script>
-<script>
-document.getElementById("contactbtn").addEventListener("click", () => {
-  const phonePopup = "201013737586"; // رقمك
-  
-  const codePopup = modalCode.textContent; // بياخد الكود من الـ popup
-  
-  const msg = `مرحبًا، أود الاستفسار عن المنتج ${codePopup}`;
-  const url = `https://wa.me/${phonePopup}?text=${encodeURIComponent(msg)}`;
-  
-  window.open(url, "_blank");
-});
-</script>
-<script>
-  const modal = document.getElementById("productModal");
-  const modalImg = document.getElementById("modalImg");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalCode = document.getElementById("modalCode");
-  const modalPrice = document.getElementById("modalPrice");
-
-  // navbar
-  const navbar = document.querySelector(".heading");
-
-  // فتح الـ popup عند الضغط على أي منتج
-  document.querySelectorAll(".pro1").forEach(item => {
-    item.addEventListener("click", () => {
-      const img = item.querySelector("img").src;
-      const title = item.querySelector("h3").textContent;
-      const soft = item.querySelectorAll("h5")[0].textContent;
-      const code = item.querySelectorAll("h5")[1].textContent;
-      const price = item.querySelector("span").textContent;
-
-      modalImg.src = img;
-      modalTitle.textContent = title + " - " + soft;
-      modalCode.textContent = code;
-      modalPrice.textContent = price;
-
-      modal.style.display = "flex";
-
-      // إخفاء الناف بار
-      navbar.style.display = "none";
-    });
-  });
-
-  // إغلاق الـ popup
-  document.querySelector(".close").onclick = () => {
-    modal.style.display = "none";
-    navbar.style.display = "flex"; // إظهار الناف بار
-  };
-
-  // إغلاق عند الضغط خارج المودال
-  window.onclick = e => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-      navbar.style.display = "flex"; // إظهار الناف بار
-    }
-  };
-</script>
-
-<script>
-  window.addEventListener("load", function () {
-    document.querySelector(".slides").style.opacity = "1";
-  });
-</script>
+<script src="script.js"></script>
 
 
 </body>

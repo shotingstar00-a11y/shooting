@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shooting Star | مصنع ملابس | Shooting Star Fashion</title>
+    <meta
+      name="google-site-verification"
+      content="4ZzbedPI407rTFgyG5Iut8foFzo6D_bqEyozvT_Ry40"
+    />
+
+    <meta
+      name="description"
+      content="Shooting Star مصنع أزياء يقدم تصنيع حسب الطلب وإنتاج علامات تجارية خاصة بجودة عالية. نخلق الأناقة والثقة في كل قطعة."
+    />
+    <meta
+      name="keywords"
+      content="Shooting Star, مصنع ملابس, تصميم أزياء, تصنيع ملابس, private label, shootingstar, شروال, شهاب, هدوم, مصنع شوتينج ستار"
+    />
+
+    <meta name="language" content="ar, en" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Shooting Star | مصنع ملابس احترافي" />
+    <meta
+      property="og:description"
+      content="نقدم تصنيع ملابس مخصص بعناية وجودة عالية. Shooting Star – الأناقة تبدأ من هنا."
+    />
+    <meta
+      property="og:image"
+      content="https://shotingstar00-a11y.github.io/shooting/img/logo.black.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://shotingstar00-a11y.github.io/shooting/"
+    />
+
+    <link rel="icon" href="./img/LOGO.black.png" type="image/png" />
+    <link
+      rel="canonical"
+      href="https://shotingstar00-a11y.github.io/shooting/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      /* --- CSS هنا كما هو لكن بعد حذف التكرارات --- */
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="heading container">
+        <h1>
+          Shooting Star <img src="./img/LOGO.png" alt="Shooting Star Logo" />
+        </h1>
+
+        <nav>
+          <a href="index.html">home</a>
+          <a href="shop.html">shoping</a>
+          <a href="about.html">about</a>
+          <a class="active" href="contact.html">contact</a>
+        </nav>
+      </div>
+    </header>
+    <div class="father">
+      <div class="contact-me">
+        <form id="contactForm">
+          <h1>Welcome to Shooting Star</h1>
+          <h2>تواصل معنا</h2>
+          <input type="text" id="name" placeholder="اكتب اسمك هنا" />
+
+          <input type="email" id="email" placeholder="example@mail.com" />
+
+          <input type="text" id="phone" placeholder="05xxxxxxxx" />
+
+          <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
+
+          <button type="submit">إرسال</button>
+
+          <div class="success-msg" id="successMsg">
+            تم إرسال رسالتك بنجاح! شكرًا لتواصلك معنا.
+          </div>
+        </form>
+      </div>
+      <div class="se2">
+        <img src="./img/tool (1).jpg" alt="" srcset="" />
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = encodeURIComponent(
+            document.getElementById("name").value.trim()
+          );
+          const email = encodeURIComponent(
+            document.getElementById("email").value.trim()
+          );
+          const phone = encodeURIComponent(
+            document.getElementById("phone").value.trim()
+          );
+          const message = encodeURIComponent(
+            document.getElementById("message").value.trim()
+          );
+
+          if (!name || !email || !message) {
+            alert("املأ الحقول المطلوبة من فضلك بلاش كسل!");
+            return;
+          }
+
+          const phoneNumber = "201013737586";
+
+          const whatsappURL =
+            `https://wa.me/${phoneNumber}?text=` +
+            `الاسم:%20${name}%0A` +
+            `البريد:%20${email}%0A` +
+            `الهاتف:%20${phone}%0A` +
+            `الرسالة:%20${message}`;
+
+          window.open(whatsappURL, "_blank");
+        });
+    </script>
+  </body>
+</html>
