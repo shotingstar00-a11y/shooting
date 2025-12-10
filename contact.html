@@ -79,27 +79,27 @@
       </div>
     </header>
     <div class="father">
+      <div class="se2">
+        <img src="./img/tool (1).jpg" alt="" srcset="" />
+      </div>
       <div class="contact-me">
         <form id="contactForm">
           <h1>Welcome to Shooting Star</h1>
           <h2>تواصل معنا</h2>
           <input type="text" id="name" placeholder="اكتب اسمك هنا" />
 
-          <input type="email" id="email" placeholder="example@mail.com" />
+          <input type="email" id="email" placeholder="البريد الألكتروني" />
 
-          <input type="text" id="phone" placeholder="05xxxxxxxx" />
+          <input type="text" id="phone" placeholder="رقم الهاتف" />
 
           <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
 
-          <button type="submit">إرسال</button>
+          <button class="submit" type="submit">إرسال</button>
 
-          <div class="success-msg" id="successMsg">
+          <div onclick="message()" class="success-msg" id="successMsg">
             تم إرسال رسالتك بنجاح! شكرًا لتواصلك معنا.
           </div>
         </form>
-      </div>
-      <div class="se2">
-        <img src="./img/tool (1).jpg" alt="" srcset="" />
       </div>
     </div>
     <footer class="footer">
@@ -154,7 +154,7 @@
     <script>
       document
         .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
+        .addEventListener("submit", function box(e) {
           e.preventDefault();
 
           const name = encodeURIComponent(
@@ -186,6 +186,14 @@
 
           window.open(whatsappURL, "_blank");
         });
+      let submitBtn = document.querySelector(".submit");
+      let messageBox = document.querySelector(".success-msg");
+
+      submitBtn.addEventListener("click", function () {
+        if (name || email || message) {
+          messageBox.style.display = "block"; // اظهار الرسالة
+        }
+      });
     </script>
   </body>
 </html>

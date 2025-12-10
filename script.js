@@ -134,3 +134,137 @@ window.addEventListener("load", function () {
   const slider = document.querySelector(".slides");
   if (slider) slider.style.opacity = "1";
 });
+let ticking = false;
+
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".heading");
+
+  const hero =
+    document.querySelector(".our-story-hero") ||
+    document.querySelector(".our-story-intro");
+
+  if (!hero || !navbar) return;
+
+  const triggerPoint = hero.offsetHeight - 100;
+  const scrollY = window.scrollY;
+
+  if (scrollY > triggerPoint) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+// ================= TRANSLATION DATA =================
+const translations = {
+  en: {
+    home: "Home",
+    shoping: "Shop",
+    about: "About",
+    contact: "Contact",
+    hero_text: "Crafting Fashion. Creating Confidence.",
+    my_products: "My Products",
+    contact_me: "Contact Me",
+    about_me: "About Me",
+    our_story: "Our Story",
+    our_story1:
+      "Founded with a vision to redefine fashion manufacturing, Shooting Star brings together skilled craftsmanship, modern technology, and timeless design to create clothing that speaks for itself",
+    values: "Our Values",
+    values1: `    Quality First  
+            Creative Design
+                     Long-term Partnerships `,
+    services: "Our Services",
+    our_service: `Custom Manufacturing
+We bring your designs to life with precision and care.
+
+
+
+Private Label Production
+From concept to final product — your brand, our expertise.
+
+
+
+Bulk Orders & Export
+Reliable production and timely delivery worldwide.`,
+    contact_us: "Contact Us",
+    get_in_touch: "Get in Touch",
+    name: "Enter your full name",
+    send: "send message",
+    // Footer
+    footer_about: `We are working to expand our production lines and increase our capabilities to reach new markets, and to develop products that meet the constantly changing needs of customers.`,
+    quick_links: "Quick Links",
+    adress: "📍 address: egypt- cairo- ezbet el nakhl",
+    phone: "📞 phone:01013737586",
+    email: "✉️ email:shotingstar00@gmail.com",
+    rights: "All Rights Reserved © 2026 – Shooting Star",
+  },
+
+  ar: {
+    home: "الرئيسية",
+    shoping: "المنتجات",
+    about: "من نحن",
+    contact: "اتصل بنا",
+    hero_text: "نصنع الأناقة. نخلق الثقة.",
+    my_products: "المنتجات",
+    contact_me: "تواصل معي",
+    about_me: "من نحن",
+    our_story: "قصتنا",
+    our_story1:
+      "تأسست شركة Shooting Star بهدف إعادة تعريف صناعة الأزياء، حيث تجمع بين الحرفية الماهرة والتكنولوجيا الحديثة والتصميم الخالد لإنشاء ملابس تتحدث عن نفسها",
+    values: "قيمنا",
+    values1: `الجودة أولاً
+تصميم إبداعي
+شراكات طويلة الأمد`,
+    services: "خدماتنا",
+    our_service: `تصنيع حسب الطلب
+نُضفي على تصاميمكم لمسةً من الدقة والعناية.
+
+إنتاج العلامات التجارية الخاصة
+من الفكرة إلى المنتج النهائي - علامتكم التجارية، خبرتنا.
+
+طلبات الجملة والتصدير
+إنتاج موثوق وتسليم في الوقت المحدد لجميع أنحاء العالم.
+`,
+    contact_us: "أتصل بنا",
+    get_in_touch: "كن على تواصل",
+    name: "أكتب أسمك بالكامل",
+    send: "أرسال",
+    // Footer
+    footer_about: `نحن نعمل على توسيع خطوط إنتاجنا وزيادة قدراتنا للوصول إلى أسواق جديدة، وتطوير منتجات تلبي احتياجات العملاء المتغيرة باستمرار`,
+    quick_links: "روابط سريعة",
+    address: "العنوان: مصر - القاهره - عزبه النخل📍",
+    phone: " رقم الهاتف:01013737586📞",
+    email: "shotingstar00@gmail.com:أيميل✉️",
+    rights: "© 2026 جميع الحقوق محفوظة – Shooting Star",
+  },
+};
+
+// ================ BUTTON ACTION =====================
+const btn = document.getElementById("lang-toggle");
+let currentLang = localStorage.getItem("lang") || "en";
+
+function applyTranslation(lang) {
+  document.documentElement.lang = lang;
+
+  // RTL - LTR
+  document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
+  document.body.style.textAlign = lang === "ar" ? "right" : "left";
+
+  // Change button text
+  btn.textContent = lang === "ar" ? "EN" : "AR";
+
+  // Replace all text nodes with translation
+  document.querySelectorAll("[data-translate]").forEach((el) => {
+    el.textContent = translations[lang][el.dataset.translate];
+  });
+
+  localStorage.setItem("lang", lang);
+}
+
+// Toggle Language
+btn.onclick = () => {
+  currentLang = currentLang === "en" ? "ar" : "en";
+  applyTranslation(currentLang);
+};
+
+// Apply on page load
+applyTranslation(currentLang);

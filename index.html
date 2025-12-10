@@ -44,10 +44,22 @@
   <div class="heading container">
     <h1>Shooting Star<img src="./img/LOGO.png" /></h1>
     <nav>
-      <a class="active" href="index.html">home</a>
-      <a href="shop.html">shoping</a>
-      <a href="about.html">about</a>
-      <a href="contact.html">contact</a>
+      <a data-translate="home" class="active" href="index.html">home</a>
+      <a data-translate="shoping"  href="shop.html">shoping</a>
+      <a data-translate="about"  href="about.html">about</a>
+      <a data-translate="contact"  href="contact.html">contact</a>
+     <li id="lang-toggle">
+
+       <ol>
+         <button>AR</button>
+       </ol> 
+       <ol>
+         <button>EN</button>
+       </ol> 
+      
+        
+      </li>
+
     </nav>
   </div>
 </div>
@@ -63,7 +75,7 @@
   
   <!-- الطبقة السوداء الشفافة -->
   <div class="overlay">
-    <h1 class="text-animation">Crafting Fashion. Creating Confidence.</h1>
+    <h1 data-translate="hero_text" class="text-animation">Crafting Fashion. Creating Confidence.</h1>
   </div>
 </div>
 
@@ -76,7 +88,7 @@
 </div>
 
 
-    <h1 class="my-pro">My products</h1>
+    <h1 data-translate="my_products" class="my-pro">My products</h1>
 
     <div class="product container">
       <!-- ==== Product 1 ==== -->
@@ -95,7 +107,7 @@
               <i class="fa-solid fa-star"></i>
             </div>
             <span>300EGP</span>
-            <button>contact me</button>
+            <button data-translate="contact_me">contact me</button>
           </div>
         </div>
       </div>
@@ -116,7 +128,7 @@
               <i class="fa-solid fa-star"></i>
             </div>
             <span>300EGP</span>
-            <button>contact me</button>
+            <button data-translate="contact_me">contact me</button>
           </div>
         </div>
       </div>
@@ -137,7 +149,7 @@
               <i class="fa-solid fa-star"></i>
             </div>
             <span>300EGP</span>
-            <button>contact me</button>
+            <button data-translate="contact_me">contact me</button>
           </div>
         </div>
       </div>
@@ -158,7 +170,7 @@
               <i class="fa-solid fa-star"></i>
             </div>
             <span>300EGP</span>
-            <button>contact me</button>
+            <button data-translate="contact_me">contact me</button>
           </div>
         </div>
       </div>
@@ -179,7 +191,7 @@
               <i class="fa-solid fa-star"></i>
             </div>
             <span>300EGP</span>
-            <button>contact me</button>
+            <button data-translate="contact_me">contact me</button>
           </div>
         </div>
       </div>
@@ -213,65 +225,55 @@
         <span class="color" data-img="./img/img6.jpg" style="background:black;"></span>
       </div>
 
-      <button id="contactbtn">Contact Me</button>
+      <button data-translate="contact_me" id="contactbtn">Contact Me</button>
     </div>
 
   </div>
 </div>
     <!-- ================= ABOUT ================= -->
     <div class="caption"></div>
-    <h1 class="me container">About Me</h1>
+    <h1 class="me container" data-translate="about_me">About Me</h1>
     <div class="about container">
-      <h1>Our story</h1>
-      <span>
+      <h1 data-translate="our_story" >Our story</h1>
+      <span data-translate="our_story1">
         Founded with a vision to redefine fashion manufacturing, Shooting Star
         brings together skilled craftsmanship, modern technology, and timeless
         design to create clothing that speaks for itself. <br />
-        <span style="direction: rtl; text-align: right"
-          >تأسست شركة<span style="direction: rtl; unicode-bidi: embed"
-            >Shooting Star
-          </span>
-          بهدف إعادة تعريف صناعة الأزياء، حيث تجمع بين الحرفية الماهرة
-          والتكنولوجيا الحديثة والتصميم الخالد لإنشاء ملابس تتحدث عن نفسها</span
-        >
       </span>
+      <h1 data-translate="values">Our Values</h1>
+      <span data-translate="values1">
+        Quality First <br>
+        Creative Design<br>
+        Long-term Partnerships <br>
 
-      <h1>Our Values</h1>
-      <span>
-        Quality First — الجودة أولاً<br />
-        Creative Design — تصميم مبتكر <br />
-        Long-term Partnerships — شراكات دائمة
       </span>
-
-      <h1>Our Services</h1>
-      <span>
+      <h1 data-translate="services">Our Services</h1>
+      <span data-translate="our_service">
         Custom Manufacturing <br />
-        We bring your designs to life with precision and care. <br />تصنيع حسب
-        الطلب نُضفي الحيوية على تصميماتك بدقة وعناية. <br /><br /><br />
+        We bring your designs to life with precision and care. <br /> 
+      <br /><br /><br />
         Private Label Production <br />
-        From concept to final product — your brand, our expertise. <br />إنتاج
-        العلامات التجارية الخاصة من الفكرة إلى المنتج النهائي - علامتك التجارية،
-        خبرتنا. <br /><br /><br />
+        From concept to final product — your brand, our expertise. <br />
+        <br /><br /><br />
         Bulk Orders & Export <br />
-        Reliable production and timely delivery worldwide. <br />طلبات الجملة
-        والتصدير إنتاج موثوق وتسليم في الوقت المحدد في جميع أنحاء العالم.
-      </span>
+        Reliable production and timely delivery worldwide. <br /> 
+        </span>
     </div>
 
     <!-- ================= CONTACT FORM ================= -->
     <section class="contact container" id="contact">
-      <h1>Contact Us</h1>
+      <h1 data-translate="contact_us">Contact Us</h1>
 
       <div class="footer">
         <div class="contact-info">
-          <h2>Get in Touch</h2>
+          <h2 data-translate="get_in_touch">Get in Touch</h2>
           <p>📞 +201113605116</p>
           <p>✉️ shotingstar00@gmail.com</p>
           <p>🕐 all day | 9 AM – 6 PM</p>
         </div>
 
         <form class="contact-form" onsubmit="sendToWhatsApp(event)">
-          <input type="text" id="name" placeholder="Your Name" required />
+          <input data-translate="name" type="text" id="name" placeholder="Your Name" required />
           <input type="email" id="email" placeholder="Your Email" required />
           <textarea
             id="message"
@@ -279,35 +281,35 @@
             rows="5"
             required
           ></textarea>
-          <button type="submit">Send Message</button>
+          <button data-translate="send" type="submit">Send Message</button>
         </form>
       </div>
     </section>
 <footer class="footer">
   <div class="container">
 
-    <div class="footer-about">
+    <div data-translate="footer_about" class="footer-about">
       <h3>shooting star</h3>
-<p>نعمل على توسيع خطوط الإنتاج وزيادة قدراتنا للوصول لأسواق جديدة، وتطوير منتجات تلائم احتياجات العملاء المتغيرة باستمرار.</p>    </div>
+<p>We are working to expand our production lines and increase our capabilities to reach new markets, and to develop products that meet the constantly changing needs of customers.</p>    </div>
 
     <div class="footer-links">
-      <h4>روابط سريعة</h4>
+      <h4 data-translate="quick_links">Quick links</h4>
       <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html">من نحن</a></li>
-        <li><a href="about.html">الخدمات</a></li>
-        <li><a href="contact.html">اتصل بنا</a></li>
+        <li><a data-translate="home" href="index.html">home</a></li>
+        <li><a data-translate="about_me" href="about.html">about me</a></li>
+        <li><a data-translate="services" href="about.html">services</a></li>
+        <li><a data-translate="contact_me" href="contact.html">contact me</a></li>
       </ul>
     </div>
 
     <div class="footer-contact">
-      <h4>تواصل معنا</h4>
+      <h4 data-translate="contact_me">contact_me</h4>
       <ul>
-        <li>      <p>📍 العنوان: القاهره - عزبه النخل</p>
+        <li>      <p data-translate="address">📍 address: egypt- cairo- ezbet el nakhl</p>
 </li>
-        <li>      <p>📞 الهاتف: 01113605116</p>
+        <li>      <p data-translate="phone">📞 phone:01013737586</p>
 </li>
-        <li>      <p>✉️ البريد: shotingstar00@gmail.com</p>
+        <li>      <p data-translate="email">✉️ email:shotingstar00@gmail.com</p>
 </li>
       </ul>
 
@@ -321,13 +323,14 @@
     </div>
   </div>
 
-  <div class="copy">
-    © 2026 جميع الحقوق محفوظة –  shooting star
-  </div>
+  <div data-translate="rights" class="copy">
+© 2026 All rights reserved – shooting star  </div>
 </footer>
 
     <!-- ================= SCRIPTS ================= -->
 <script src="script.js"></script>
+<script src="https://unpkg.com/i18next@23.0.0/dist/umd/i18next.min.js"></script>
+
 
 
 </body>
